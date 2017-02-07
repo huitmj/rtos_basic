@@ -36,8 +36,8 @@
 #include  <os.h>
 #include  <stdio.h>
 
-#include  <lib_mem.h>
-#include  <lib_math.h>
+//#include  <lib_mem.h>
+//#include  <lib_math.h>
 
 
 /*
@@ -134,14 +134,14 @@ static  void  App_TaskStart (void *p_arg)
     (void)p_arg;                                                /* See Note #1                                          */
 
     CPU_Init();
-    Mem_Init();                                                 /* Initialize the Memory Management Module              */
-    Math_Init();                                                /* Initialize the Mathematical Module                   */
+//    Mem_Init();                                                 /* Initialize the Memory Management Module              */
+//    Math_Init();                                                /* Initialize the Mathematical Module                   */
 
     OS_CPU_SysTickInit();
 
     while (DEF_TRUE) {                                          /* Task body, always written as an infinite loop.       */
     	printf("[JH] uCOS-III is running.\n");
-        OSTimeDlyHMSM(0u, 0u, 5u, 0u,
+        OSTimeDlyHMSM(0u, 0u, 2u, 0u,
                       OS_OPT_TIME_HMSM_STRICT,
                       &os_err);
     }
